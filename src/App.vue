@@ -17,6 +17,10 @@ import { RouterView } from 'vue-router'
   padding: 0;
 }
 
+html, body {
+  overflow-x: hidden;
+}
+
 body {
   font-family: 'Georgia', 'Times New Roman', serif;
   background-color: #fdf6f0;

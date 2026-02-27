@@ -25,7 +25,7 @@ onMounted(() => {
 const form = ref({
   name: '',
   email: '',
-  guests: '1',
+  phone: '',
   message: '',
 })
 
@@ -74,6 +74,12 @@ async function handleSubmit() {
   }
 }
 
+function autoResize(event: Event) {
+  const el = event.target as HTMLTextAreaElement
+  el.style.height = 'auto'
+  el.style.height = el.scrollHeight + 'px'
+}
+
 function goBack() {
   router.push('/')
 }
@@ -93,6 +99,17 @@ function goBack() {
         </div>
 
         <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input
+            id="phone"
+            v-model="form.phone"
+            type="tel"
+            required
+            placeholder="(xxx)-xxx-xxxx"
+          />
+        </div>
+
+        <div class="form-group">
           <label for="email">Email</label>
           <input
             id="email"
@@ -104,23 +121,13 @@ function goBack() {
         </div>
 
         <div class="form-group">
-          <label for="guests">Number of Guests</label>
-          <select id="guests" v-model="form.guests">
-            <option value="1">1</option>
-            <option value="2">2</option>
-            <option value="3">3</option>
-            <option value="4">4</option>
-            <option value="5">5+</option>
-          </select>
-        </div>
-
-        <div class="form-group">
           <label for="message">Message for Hannah &amp; Cap (optional)</label>
           <textarea
             id="message"
             v-model="form.message"
-            rows="4"
+            rows="2"
             placeholder="Any dietary restrictions, notes, or well-wishes..."
+            @input="autoResize"
           />
         </div>
 
@@ -149,7 +156,7 @@ function goBack() {
   width: 100%;
   max-width: 500px;
   background: #fff;
-  border-radius: 8px;
+  border-radius: 50px;
   padding: 2.5rem;
   box-shadow: 0 2px 20px rgba(74, 55, 40, 0.08);
 }
@@ -224,7 +231,8 @@ function goBack() {
 }
 
 .form-group textarea {
-  resize: vertical;
+  resize: none;
+  overflow: hidden;
 }
 
 .h-captcha {
@@ -271,6 +279,6 @@ function goBack() {
 <style>
 .h-captcha iframe {
   border-radius: 25px !important;
-  border: 1px solid #e0d5c8 !important;
+  border: 1.75px solid #e0d5c8 !important;
 }
 </style>
