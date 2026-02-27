@@ -1,3 +1,3 @@
 # What it is...
 
-Vue SPA Baby Shower site for my sister & brother-in-law's first baby shower! 🎊
+Vue 3 S.P.A. for my sister & brother-in-law's first baby shower! 🎊
