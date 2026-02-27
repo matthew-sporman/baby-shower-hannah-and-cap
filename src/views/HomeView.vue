@@ -16,7 +16,7 @@ import RsvpButton from '@/components/RsvpButton.vue'
             target="_blank"
             rel="noopener noreferrer"
             class="location-link"
-            >ALL GRAND EVENTS + FLORAL</a
+            >2233 W GRAND RIVER AVE, OKEMOS, MI 48864</a
           >
         </p>
       </div>
