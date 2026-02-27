@@ -23,6 +23,15 @@ import RsvpButton from '@/components/RsvpButton.vue'
       <div class="cta">
         <RsvpButton />
       </div>
+      <div class="registry">
+        <a
+          href="https://www.amazon.com/baby-reg/hannahandcap-wilson-june-2026-muskegon/2MCLTPZ8AVFP7"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="registry-link"
+          >BABY REGISTRY</a
+        >
+      </div>
     </div>
   </main>
 </template>
@@ -79,7 +88,9 @@ import RsvpButton from '@/components/RsvpButton.vue'
   border: 2px solid #c9a87c;
   border-radius: 25px;
   padding: 0.25rem 0.75rem;
-  transition: background-color 0.2s, color 0.2s;
+  transition:
+    background-color 0.2s,
+    color 0.2s;
 }
 
 .location-link:hover {
@@ -89,6 +100,36 @@ import RsvpButton from '@/components/RsvpButton.vue'
 
 .cta {
   margin-top: 1rem;
+}
+
+.registry {
+  margin-top: 1.5rem;
+}
+
+.registry-link {
+  display: inline-block;
+  padding: 10px 32px;
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: 1.1rem;
+  letter-spacing: 0.15em;
+  color: #fff;
+  background-color: #c9a87c;
+  border: none;
+  border-radius: 25px;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background-color 0.3s ease,
+    transform 0.2s ease;
+}
+
+.registry-link:hover {
+  background-color: #b8956a;
+  transform: translateY(-2px);
+}
+
+.registry-link:active {
+  transform: translateY(0);
 }
 
 @media (max-width: 600px) {
