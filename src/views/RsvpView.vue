@@ -1,8 +1,26 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
 
+declare const hcaptcha: { render: (id: string, opts: Record<string, string>) => void }
+
 const router = useRouter()
+
+onMounted(() => {
+  const id = 'web3forms-captcha-script'
+  if (document.getElementById(id)) {
+    if (typeof hcaptcha !== 'undefined') {
+      hcaptcha.render('h-captcha', { sitekey: '50b2fe65-b00b-4b9e-ad62-3ba471098be2' })
+    }
+    return
+  }
+  const script = document.createElement('script')
+  script.id = id
+  script.src = 'https://web3forms.com/client/script.js'
+  script.async = true
+  script.defer = true
+  document.body.appendChild(script)
+})
 
 const form = ref({
   name: '',
@@ -18,6 +36,17 @@ async function handleSubmit() {
   isSubmitting.value = true
   submitError.value = ''
 
+  const hCaptchaEl = document.querySelector<HTMLTextAreaElement>(
+    'textarea[name=h-captcha-response]',
+  )
+  const hCaptchaResponse = hCaptchaEl?.value
+
+  if (!hCaptchaResponse) {
+    submitError.value = 'Please complete the captcha.'
+    isSubmitting.value = false
+    return
+  }
+
   try {
     const response = await fetch('https://api.web3forms.com/submit', {
       method: 'POST',
@@ -26,6 +55,7 @@ async function handleSubmit() {
         access_key: 'dfbd4cda-f610-4956-a46f-678f349a14b0',
         subject: `Baby Shower RSVP from ${form.value.name}`,
         from_name: form.value.name,
+        'h-captcha-response': hCaptchaResponse,
         ...form.value,
       }),
     })
@@ -93,6 +123,8 @@ function goBack() {
             placeholder="Any dietary restrictions, notes, or well-wishes..."
           />
         </div>
+
+        <div id="h-captcha" class="h-captcha" data-captcha="true"></div>
 
         <p v-if="submitError" class="error">{{ submitError }}</p>
 
@@ -195,6 +227,11 @@ function goBack() {
   resize: vertical;
 }
 
+.h-captcha {
+  display: flex;
+  justify-content: center;
+}
+
 .error {
   color: #c0392b;
   font-size: 0.9rem;
@@ -228,5 +265,12 @@ function goBack() {
 .submit-button:disabled {
   opacity: 0.6;
   cursor: not-allowed;
+}
+</style>
+
+<style>
+.h-captcha iframe {
+  border-radius: 25px !important;
+  border: 1px solid #e0d5c8 !important;
 }
 </style>
