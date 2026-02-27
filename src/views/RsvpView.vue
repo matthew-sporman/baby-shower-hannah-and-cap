@@ -23,7 +23,7 @@ async function handleSubmit() {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        access_key: 'YOUR_WEB3FORMS_ACCESS_KEY',
+        access_key: '80b48eaa-1ed0-495e-a923-97f8a0df01df',
         subject: `Baby Shower RSVP from ${form.value.name}`,
         from_name: form.value.name,
         ...form.value,
@@ -179,7 +179,6 @@ function goBack() {
   font-size: 1rem;
   padding: 0.75rem;
   border: 1px solid #e0d5c8;
-  border-radius: 4px;
   background: #fdf6f0;
   color: #4a3728;
   transition: border-color 0.2s ease;
@@ -210,7 +209,6 @@ function goBack() {
   color: #fff;
   background-color: #c9a87c;
   border: none;
-  border-radius: 4px;
   cursor: pointer;
   transition:
     background-color 0.3s ease,

@@ -9,8 +9,16 @@ import RsvpButton from '@/components/RsvpButton.vue'
       <h1 class="title">Hannah &amp; Cap's<br />Baby Shower</h1>
       <div class="divider">&#10045;</div>
       <div class="details">
-        <p class="detail-item">Date TBD</p>
-        <p class="detail-item">Location TBD</p>
+        <p class="detail-item">MAY 9TH, 2026</p>
+        <p class="detail-item">
+          <a
+            href="https://www.google.com/maps/place/All+Grand+Events+%2B+Floral/data=!4m2!3m1!1s0x0:0x593a3e5256c6f337?sa=X&ved=1t:2428&ictx=111"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="location-link"
+            >ALL GRAND EVENTS + FLORAL</a
+          >
+        </p>
       </div>
       <div class="cta">
         <RsvpButton />
@@ -63,6 +71,20 @@ import RsvpButton from '@/components/RsvpButton.vue'
   font-size: 1.1rem;
   line-height: 2;
   color: #6b5744;
+}
+
+.location-link {
+  color: #a08060;
+  text-decoration: none;
+  border: 2px solid #c9a87c;
+  border-radius: 25px;
+  padding: 0.25rem 0.75rem;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.location-link:hover {
+  background-color: #c9a87c;
+  color: #fff;
 }
 
 .cta {

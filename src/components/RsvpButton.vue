@@ -22,7 +22,6 @@ function goToRsvp() {
   color: #fff;
   background-color: #c9a87c;
   border: none;
-  border-radius: 4px;
   cursor: pointer;
   transition:
     background-color 0.3s ease,

@@ -27,4 +27,11 @@ body {
 .app {
   min-height: 100vh;
 }
+
+input,
+select,
+textarea,
+button {
+  border-radius: 25px;
+}
 </style>
