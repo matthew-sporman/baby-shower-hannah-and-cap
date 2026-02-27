@@ -23,7 +23,7 @@ async function handleSubmit() {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        access_key: '80b48eaa-1ed0-495e-a923-97f8a0df01df',
+        access_key: 'dfbd4cda-f610-4956-a46f-678f349a14b0',
         subject: `Baby Shower RSVP from ${form.value.name}`,
         from_name: form.value.name,
         ...form.value,
