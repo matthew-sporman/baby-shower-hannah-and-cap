@@ -49,7 +49,7 @@ import RsvpButton from '@/components/RsvpButton.vue'
 .home {
   height: 100vh;
   overflow: hidden;
-  background-color: #d4e4c8;
+  background-color: #b5cc8e;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -57,7 +57,7 @@ import RsvpButton from '@/components/RsvpButton.vue'
 
 .hero-container {
   position: relative;
-  max-height: 100vh;
+  height: 100vh;
   aspect-ratio: 3 / 4;
 }
 
@@ -65,7 +65,7 @@ import RsvpButton from '@/components/RsvpButton.vue'
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 .hero-overlay {
@@ -111,6 +111,7 @@ import RsvpButton from '@/components/RsvpButton.vue'
   letter-spacing: 0.2em;
   font-size: 2.5rem;
   line-height: 1;
+  text-shadow: 0 0 4px rgba(255, 253, 245, 0.8);
 }
 
 .grown {
@@ -120,6 +121,7 @@ import RsvpButton from '@/components/RsvpButton.vue'
   line-height: 1;
   margin-top: -0.25rem;
   color: #5a7a3a;
+  text-shadow: 0 0 4px rgba(255, 253, 245, 0.8);
 }
 
 .title {
@@ -129,12 +131,14 @@ import RsvpButton from '@/components/RsvpButton.vue'
   line-height: 1.2;
   color: #4a3728;
   margin-bottom: 0.15rem;
+  text-shadow: 0 0 4px rgba(255, 253, 245, 0.8);
 }
 
 .divider {
   font-size: 1.2rem;
   color: #c9a87c;
   margin-bottom: 0.25rem;
+  text-shadow: 0 0 3px rgba(255, 253, 245, 0.8);
 }
 
 .details {
@@ -146,6 +150,7 @@ import RsvpButton from '@/components/RsvpButton.vue'
   line-height: 1.8;
   color: #6b5744;
   margin-bottom: 0.2rem;
+  text-shadow: 0 0 3px rgba(255, 253, 245, 0.8);
 }
 
 .location-link {
@@ -202,14 +207,14 @@ import RsvpButton from '@/components/RsvpButton.vue'
 @media (max-width: 600px) {
   .hero-container {
     width: 100%;
-    height: 100vh;
-    max-height: none;
+    height: auto;
     aspect-ratio: auto;
   }
 
   .hero-bg {
-    object-fit: cover;
-    object-position: center top;
+    width: 100%;
+    height: auto;
+    object-fit: initial;
   }
 
   .title {
