@@ -15,9 +15,9 @@ function goToRsvp() {
 <style scoped>
 .rsvp-button {
   display: inline-block;
-  padding: 16px 48px;
+  padding: 8px 32px;
   font-family: 'Georgia', 'Times New Roman', serif;
-  font-size: 1.2rem;
+  font-size: 0.9rem;
   letter-spacing: 0.15em;
   color: #fff;
   background-color: #c9a87c;
