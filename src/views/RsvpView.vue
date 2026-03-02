@@ -80,14 +80,21 @@ function autoResize(event: Event) {
   el.style.height = el.scrollHeight + 'px'
 }
 
+const formContainer = ref<HTMLElement | null>(null)
+
 function goBack() {
-  router.push('/')
+  if (formContainer.value) {
+    formContainer.value.style.animation = 'form-depart 0.4s cubic-bezier(0.7, 0, 0.84, 0) forwards'
+    formContainer.value.addEventListener('animationend', () => router.push('/'), { once: true })
+  } else {
+    router.push('/')
+  }
 }
 </script>
 
 <template>
   <main class="rsvp">
-    <div class="form-container">
+    <div ref="formContainer" class="form-container">
       <button class="back-link" @click="goBack">&larr; Back</button>
       <h1 class="form-title">RSVP</h1>
       <p class="form-subtitle">We'd love to celebrate with you!</p>
@@ -166,6 +173,18 @@ function goBack() {
   border-radius: 50px;
   padding: 2.5rem;
   box-shadow: 0 2px 20px rgba(74, 55, 40, 0.08);
+  animation: form-arrive 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes form-arrive {
+  from {
+    opacity: 0;
+    transform: translateY(40px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 .back-link {
@@ -185,6 +204,7 @@ function goBack() {
 }
 
 .form-title {
+  font-family: 'Balthazar', serif;
   font-size: 2rem;
   font-weight: 400;
   color: #4a3728;
@@ -194,9 +214,10 @@ function goBack() {
 }
 
 .form-subtitle {
+  font-family: 'Cedarville Cursive', cursive;
   text-align: center;
   color: #a08060;
-  font-size: 1rem;
+  font-size: 1.25rem;
   margin-bottom: 2rem;
 }
 
@@ -287,5 +308,16 @@ function goBack() {
 .h-captcha iframe {
   border-radius: 25px !important;
   border: 1.75px solid #e0d5c8 !important;
+}
+
+@keyframes form-depart {
+  from {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(40px) scale(0.96);
+  }
 }
 </style>

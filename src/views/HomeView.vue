@@ -136,7 +136,7 @@ import RsvpButton from '@/components/RsvpButton.vue'
 }
 
 .title {
-  font-family: 'Puppies Play', cursive;
+  font-family: 'Cedarville Cursive', cursive;
   font-size: 2.8rem;
   font-weight: 400;
   line-height: 1.2;
@@ -254,6 +254,14 @@ import RsvpButton from '@/components/RsvpButton.vue'
 
   .detail-item {
     font-size: 1.7rem;
+  }
+
+  .locally {
+    font-size: 3.5rem;
+  }
+
+  .grown {
+    font-size: 4rem;
   }
 
   .title {
