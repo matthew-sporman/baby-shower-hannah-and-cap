@@ -36,4 +36,11 @@ function goToRsvp() {
 .rsvp-button:active {
   transform: translateY(0);
 }
+
+@media (min-aspect-ratio: 16/9) {
+  .rsvp-button {
+    padding: 16px 64px;
+    font-size: 1.8rem;
+  }
+}
 </style>

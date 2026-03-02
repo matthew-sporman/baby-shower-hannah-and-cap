@@ -5,7 +5,7 @@ import RsvpButton from '@/components/RsvpButton.vue'
 <template>
   <main class="home">
     <div class="hero-container">
-      <img src="/images/background_main.jpg" class="hero-bg" alt="" />
+      <img src="/images/background_main.png" class="hero-bg" alt="" />
       <div class="hero-overlay">
         <div class="zone-top">
           <p class="preheading">
@@ -49,10 +49,21 @@ import RsvpButton from '@/components/RsvpButton.vue'
 .home {
   height: 100dvh;
   overflow: hidden;
-  background-color: #b5cc8e;
+  background: url('/images/mobile_background.png') center / cover no-repeat #b5cc8e;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+@media (min-aspect-ratio: 16/9) {
+  .home {
+    background: url('/images/desktop_background.png') center / cover no-repeat;
+  }
+
+  .hero-container {
+    transform: scale(0.75);
+  }
+
 }
 
 .hero-container {
@@ -227,6 +238,26 @@ import RsvpButton from '@/components/RsvpButton.vue'
 
   .grown {
     font-size: 2.2rem;
+  }
+}
+
+@media (min-aspect-ratio: 16/9) {
+  .registry-link {
+    padding: 16px 64px;
+    font-size: 1.8rem;
+  }
+
+  .location-link {
+    padding: 0.3rem 1rem;
+    font-size: 1.6rem;
+  }
+
+  .detail-item {
+    font-size: 1.7rem;
+  }
+
+  .title {
+    font-size: 5.6rem;
   }
 }
 </style>

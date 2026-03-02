@@ -150,6 +150,13 @@ function goBack() {
   justify-content: center;
   min-height: 100vh;
   padding: 2rem;
+  background: url('/images/mobile_background.png') center / cover no-repeat fixed;
+}
+
+@media (min-aspect-ratio: 16/9) {
+  .rsvp {
+    background: url('/images/desktop_background.png') center / cover no-repeat fixed;
+  }
 }
 
 .form-container {
