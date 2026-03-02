@@ -47,7 +47,8 @@ import RsvpButton from '@/components/RsvpButton.vue'
 
 <style scoped>
 .home {
-  height: 100%;
+  position: fixed;
+  inset: 0;
   overflow: hidden;
   background: url('/images/mobile_background.png') center / cover no-repeat #b5cc8e;
   display: flex;

@@ -18,19 +18,18 @@ import { RouterView } from 'vue-router'
 }
 
 html, body {
-  position: fixed;
-  inset: 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 
 body {
   font-family: 'Georgia', 'Times New Roman', serif;
   background-color: #fdf6f0;
   color: #4a3728;
+  min-height: 100vh;
 }
 
 .app {
-  height: 100%;
+  min-height: 100vh;
 }
 
 input,
