@@ -155,8 +155,9 @@ function goBack() {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh;
+  height: 100%;
   padding: 2rem;
+  overflow-y: auto;
   background: url('/images/mobile_background.png') center / cover no-repeat fixed;
 }
 

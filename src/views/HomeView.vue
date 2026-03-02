@@ -47,7 +47,7 @@ import RsvpButton from '@/components/RsvpButton.vue'
 
 <style scoped>
 .home {
-  height: 100dvh;
+  height: 100%;
   overflow: hidden;
   background: url('/images/mobile_background.png') center / cover no-repeat #b5cc8e;
   display: flex;
@@ -68,7 +68,7 @@ import RsvpButton from '@/components/RsvpButton.vue'
 
 .hero-container {
   position: relative;
-  height: 100dvh;
+  height: 100%;
   aspect-ratio: 3 / 4;
 }
 
