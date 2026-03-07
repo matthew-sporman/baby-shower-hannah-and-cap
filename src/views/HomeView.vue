@@ -34,7 +34,7 @@ import GoldButton from '@/components/GoldButton.vue'
           <div class="buttons-row">
             <GoldButton to="/rsvp">RSVP</GoldButton>
             <GoldButton
-              href="https://www.amazon.com/baby-reg/hannahandcap-wilson-june-2026-muskegon/2MCLTPZ8AVFP7"
+              href="https://www.amazon.com/baby-reg/hannahandcap-wilson-june-2026/2MCLTPZ8AVFP7"
             >
               BABY REGISTRY
             </GoldButton>
