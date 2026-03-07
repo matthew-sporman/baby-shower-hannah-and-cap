@@ -98,7 +98,10 @@ function goBack() {
     <div ref="formContainer" class="form-container">
       <button class="back-link" @click="goBack">&larr; Back</button>
       <h1 class="form-title">RSVP</h1>
-      <p class="form-subtitle">We'd love to celebrate with you!</p>
+      <p class="form-subtitle">
+        <span class="form-subtitle-deadline">Please RSVP by April 9th.</span>
+        <span class="form-subtitle-message">We'd love to celebrate with you!</span>
+      </p>
 
       <form class="form" @submit.prevent="handleSubmit">
         <div class="form-group">
@@ -108,13 +111,7 @@ function goBack() {
 
         <div class="form-group">
           <label for="phone">Phone Number</label>
-          <input
-            id="phone"
-            v-model="form.phone"
-            type="tel"
-            required
-            placeholder="(xxx)-xxx-xxxx"
-          />
+          <input id="phone" v-model="form.phone" type="tel" required placeholder="(xxx)-xxx-xxxx" />
         </div>
 
         <div class="form-group">
@@ -215,11 +212,25 @@ function goBack() {
 }
 
 .form-subtitle {
-  font-family: 'Cedarville Cursive', cursive;
   text-align: center;
-  color: #a08060;
-  font-size: 1.25rem;
   margin-bottom: 2rem;
+}
+
+.form-subtitle-deadline {
+  display: block;
+  font-family: 'Balthazar', serif;
+  font-size: 0.95rem;
+  letter-spacing: 0.08em;
+  color: #6b5744;
+  margin-bottom: 0.35rem;
+}
+
+.form-subtitle-message {
+  display: block;
+  font-family: 'Cedarville Cursive', cursive;
+  font-size: 1.4rem;
+  color: #a08060;
+  line-height: 1.3;
 }
 
 .form {
