@@ -39,8 +39,8 @@ function goToRsvp() {
 
 @media (min-aspect-ratio: 16/9) {
   .rsvp-button {
-    padding: 16px 64px;
-    font-size: 1.8rem;
+    padding: clamp(8px, 1.5vmin, 16px) clamp(24px, 4vmin, 64px);
+    font-size: clamp(0.9rem, 2.2vmin, 1.8rem);
   }
 }
 </style>
