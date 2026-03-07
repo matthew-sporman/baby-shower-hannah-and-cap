@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import { useRouter } from 'vue-router'
+import GoldButton from '@/components/GoldButton.vue'
 
 declare const hcaptcha: { render: (id: string, opts: Record<string, string>) => void }
 
@@ -142,9 +143,9 @@ function goBack() {
 
         <p v-if="submitError" class="error">{{ submitError }}</p>
 
-        <button type="submit" class="submit-button" :disabled="isSubmitting">
+        <GoldButton submit :disabled="isSubmitting">
           {{ isSubmitting ? 'Sending...' : 'Send RSVP' }}
-        </button>
+        </GoldButton>
       </form>
     </div>
   </main>
@@ -274,7 +275,9 @@ function goBack() {
   text-align: center;
 }
 
-.submit-button {
+/* GoldButton submit: same gold look, bigger size */
+.form :deep(.gold-button) {
+  display: inline-block;
   padding: 14px 32px;
   font-family: 'Georgia', 'Times New Roman', serif;
   font-size: 1.1rem;
@@ -282,6 +285,7 @@ function goBack() {
   color: #fff;
   background-color: #c9a87c;
   border: none;
+  border-radius: 20px;
   cursor: pointer;
   transition:
     background-color 0.3s ease,
@@ -289,16 +293,16 @@ function goBack() {
   margin-top: 0.5rem;
 }
 
-.submit-button:hover:not(:disabled) {
+.form :deep(.gold-button:hover:not(:disabled)) {
   background-color: #b8956a;
   transform: translateY(-2px);
 }
 
-.submit-button:active:not(:disabled) {
+.form :deep(.gold-button:active:not(:disabled)) {
   transform: translateY(0);
 }
 
-.submit-button:disabled {
+.form :deep(.gold-button:disabled) {
   opacity: 0.6;
   cursor: not-allowed;
 }

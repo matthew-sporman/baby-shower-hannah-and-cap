@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import RsvpButton from '@/components/RsvpButton.vue'
+import GoldButton from '@/components/GoldButton.vue'
 </script>
 
 <template>
@@ -32,16 +32,11 @@ import RsvpButton from '@/components/RsvpButton.vue'
             </p>
           </div>
           <div class="buttons-row">
-            <RsvpButton />
-            <a
-              href="https://www.amazon.com/baby-reg/hannahandcap-wilson-june-2026-muskegon/2MCLTPZ8AVFP7"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="registry-link"
-              >BABY REGISTRY</a
-            >
+            <GoldButton to="/rsvp">RSVP by April 9th</GoldButton>
+            <GoldButton href="https://www.amazon.com/baby-reg/hannahandcap-wilson-june-2026-muskegon/2MCLTPZ8AVFP7">
+              BABY REGISTRY
+            </GoldButton>
           </div>
-          <p class="rsvp-by">Please RSVP by April 9th</p>
         </div>
       </div>
     </div>
@@ -223,16 +218,8 @@ import RsvpButton from '@/components/RsvpButton.vue'
   margin-top: 0.5rem;
 }
 
-.rsvp-by {
-  margin: 0.5rem 0 0;
-  font-size: 0.9rem;
-  color: #8a7a6a;
-  letter-spacing: 0.08em;
-  font-family: 'Balthazar', serif;
-  text-shadow: 0 0 2px rgba(255, 253, 245, 0.6);
-}
-
-.registry-link {
+/* Primary buttons: RSVP and Registry (GoldButton component) */
+.buttons-row :deep(.gold-button) {
   display: inline-block;
   padding: 8px 32px;
   font-family: 'Georgia', 'Times New Roman', serif;
@@ -249,12 +236,12 @@ import RsvpButton from '@/components/RsvpButton.vue'
     transform 0.2s ease;
 }
 
-.registry-link:hover {
+.buttons-row :deep(.gold-button:hover) {
   background-color: #b8956a;
   transform: translateY(-2px);
 }
 
-.registry-link:active {
+.buttons-row :deep(.gold-button:active) {
   transform: translateY(0);
 }
 
@@ -296,7 +283,7 @@ import RsvpButton from '@/components/RsvpButton.vue'
 
 /* Fluid typography and spacing for wide screens so small laptops don’t get smushed */
 @media (min-aspect-ratio: 16/9) {
-  .registry-link {
+  .buttons-row :deep(.gold-button) {
     padding: clamp(8px, 1.5vmin, 16px) clamp(24px, 4vmin, 64px);
     font-size: clamp(0.9rem, 2.2vmin, 1.8rem);
   }
@@ -332,10 +319,6 @@ import RsvpButton from '@/components/RsvpButton.vue'
 
   .divider {
     font-size: clamp(1rem, 1.5vmin, 1.2rem);
-  }
-
-  .rsvp-by {
-    font-size: clamp(0.85rem, 1.5vmin, 1.1rem);
   }
 }
 </style>
